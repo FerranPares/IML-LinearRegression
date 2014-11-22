@@ -4,7 +4,7 @@ load('reg_data_set_1.mat');
 figure(1);
 scatter(x(1),y(1),5,'blue');
 hold on;
-for i=1:length(x)
+for i=2:length(x)
     scatter(x(i),y(i),5,'blue');
 end
 hold off;
@@ -22,7 +22,7 @@ p2 = wAnalitical(2)*p1+wAnalitical(1);
 figure(2);
 scatter(x(1),y(1),5,'blue');
 hold on;
-for i=1:length(x)
+for i=2:length(x)
     scatter(x(i),y(i),5,'blue');
 end
 plot( p1, p2, 'g' );
@@ -53,12 +53,12 @@ disp(['wanalitic1: ',num2str(wAnaliticalPoly(2))]);
 disp(['wanalitic2: ',num2str(wAnaliticalPoly(3))]);
 disp(['wanalitic3: ',num2str(wAnaliticalPoly(4))]);
 %plot analitical
-p1 = 0:0.1:1;
+p1 = 0:0.01:1;
 p2 = wAnaliticalPoly(4)*p1.^3+wAnaliticalPoly(3)*p1.^2+wAnaliticalPoly(2)*p1+wAnaliticalPoly(1);
 figure;
 scatter(x(1),y(1),5,'blue');
 hold on;
-for i=1:length(x)
+for i=2:length(x)
     scatter(x(i),y(i),5,'blue');
 end
 plot( p1, p2, 'g' );
@@ -67,3 +67,4 @@ hold off;
 
 %Evaluation model
 %Question 7 (missing 6)
+evaluationModel;
