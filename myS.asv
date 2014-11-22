@@ -40,19 +40,18 @@ w(2) = double(y(i2)-y(i1))/double(x(i2)-x(i1));
 w(1) = -w(2)*x(i1)+y(i1);
 
 %t=? ask to user
-%t = input('Choose step size (typ. 0.001): ');
-t = 0.001;
+t = input('Choose step size (typ. 0.001): ');
+
 %num_iter=? ask to user
 num_iter = input('Choose number of iterations: ');
 
 for k=1:num_iter
     [J, G] = Jfunc(w, x, y);
     w = w + t.*G;
-    %control de J (NO FA FALTA PER AKERST TREBALL)
-end
-    disp('');
     disp(['iter: ', num2str(k)]);
     disp(['w0: ',num2str(w(1))]);
     disp(['w1: ',num2str(w(2))]);
+    %control de J (NO FA FALTA PER AKERST TREBALL)
+end
 
 
