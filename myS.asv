@@ -31,27 +31,14 @@ hold off;
 
 
 %ITERATING
+%Question 3
+t = 0.8; num_iter = 500;
+descentMethod(t, num_iter, x, y, 'usual');
 
-%randomly initialize w1, w0
-w = [0; 0];
-i1 = randi(length(x));
-i2 = randi(length(x));
-w(2) = double(y(i2)-y(i1))/double(x(i2)-x(i1));
-w(1) = -w(2)*x(i1)+y(i1);
+t = 0.1; num_iter = 2000;
+descentMethod(t, num_iter, x, y, 'usual');
 
-%t=? ask to user
-t = input('Choose step size (typ. 0.001): ');
-
-%num_iter=? ask to user
-num_iter = input('Choose number of iterations: ');
-
-for k=1:num_iter
-    [J, G] = Jfunc(w, x, y);
-    w = w + t.*G;
-    disp(['iter: ', num2str(k)]);
-    disp(['w0: ',num2str(w(1))]);
-    disp(['w1: ',num2str(w(2))]);
-    %control de J (NO FA FALTA PER AKERST TREBALL)
-end
-
+%Question 4
+t = 0.5; num_iter = 2000;
+descentMethod(t, num_iter, x, y, 'normalized');
 
