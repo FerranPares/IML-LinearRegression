@@ -6,7 +6,7 @@ load('reg_data_set_2.mat');
 trainx = x(1:(length(x)/2));
 trainy = y(1:(length(y)/2));
 
-figure(1);
+figure;
 
 scatter(trainx(1),trainy(1),5,'blue');
 hold on;
@@ -20,7 +20,7 @@ hold off;
 valx = x((length(x)/2+1):length(x));
 valy = y((length(y)/2+1):length(y));
 
-figure(2);
+figure;
 scatter(valx(1),valy(1),5,'blue');
 hold on;
 for i=2:length(valx)
@@ -54,7 +54,7 @@ f5 = tw5(1) + tw5(2)*i + tw5(3)*i.^2 + tw5(4)*i.^3 + tw5(5)*i.^4 + tw5(6)*i.^5;
 f6 = tw6(1) + tw6(2)*i + tw6(3)*i.^2 + tw6(4)*i.^3 + tw6(5)*i.^4 + tw6(6)*i.^5 + tw6(7)*i.^6;
 
 %plot validation set and the 6 models
-figure(3);
+figure;
 scatter(valx(1),valy(1),5,'black');
 hold on;
 for p=2:length(valx)
@@ -71,7 +71,7 @@ legend([hline1,hline2,hline3,hline4,hline5,hline6],'p=1','p=2','p=3','p=4','p=5'
 hold off;
 
 %plot training set and the 6 models
-figure(4);
+figure;
 scatter(trainx(1),trainy(1),5,'black');
 hold on;
 for p=2:length(trainx)
@@ -114,7 +114,7 @@ p = 1:6;
 tRMS = [tRMS1 tRMS2 tRMS3 tRMS4 tRMS5 tRMS6];
 vRMS = [vRMS1 vRMS2 vRMS3 vRMS4 vRMS5 vRMS6];
 
-figure(5);
+figure;
 hline1 = plot(p, tRMS, 'g');
 hold on;
 hline2 = plot(p, vRMS, 'r');

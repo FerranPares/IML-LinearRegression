@@ -1,7 +1,7 @@
 %PLOT DATA
 %Question 1
 load('reg_data_set_1.mat');
-figure(1);
+figure;
 scatter(x(1),y(1),5,'blue');
 hold on;
 for i=2:length(x)
@@ -19,7 +19,7 @@ disp(['w1: ',num2str(wAnalitical(2))]);
 %plot analitical
 p1 = 0:0.1:1;
 p2 = wAnalitical(2)*p1+wAnalitical(1);
-figure(2);
+figure;
 scatter(x(1),y(1),5,'blue');
 hold on;
 for i=2:length(x)
